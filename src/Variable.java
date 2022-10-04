@@ -35,7 +35,7 @@ public class Variable {
             bits = 32;
             return bits;
         } else if (type.equals("boolean")) {
-            bits = 49;
+            bits = 8;
             return bits;
         } else if (type.equals("double")) {
             bits = 64;

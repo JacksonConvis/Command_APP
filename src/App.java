@@ -7,10 +7,12 @@ public class App {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String ans = "yes";
+        ArrayList<Variable> variables = new ArrayList<Variable>();
+
         System.out.println("welcome to the program! enter yes or } to exit");
         ans = scan.nextLine();
 
-        if (ans.equals("yes")) {
+        while (ans.equalsIgnoreCase("yes")) {
 
             System.out.println("DECLARE YOUR VARIABLE'S TYPE:");
             String type = scan.nextLine();
@@ -18,43 +20,22 @@ public class App {
             System.out.println("DECLARE YOUR VARIABLE'S NAME");
             String name = scan.nextLine();
 
-            ArrayList<Variable> variables = new ArrayList<Variable>();
-
             Variable vrbl = new Variable(name, type);
 
             variables.add(vrbl);
 
             vrbl.getBits();
 
-            System.out.print("VARIABLE'S NAME:");
-            App.printVariablesNames(variables);
-            System.out.println("BIT COUNT: " + App.getTotalBits(variables));
-        }
-
-        do {
-
-            System.out.println("welcome to the program! enter yes or } to exit");
+            System.out.println("Do you wish to continue?");
             ans = scan.nextLine();
 
-            System.out.println("DECLARE YOUR VARIABLE'S TYPE:");
-            String type = scan.nextLine();
+        }
 
-            System.out.println("DECLARE YOUR VARIABLE'S NAME");
-            String name = scan.nextLine();
-
-            ArrayList<Variable> variables = new ArrayList<Variable>();
-
-            Variable vrbl = new Variable(name, type);
-
-            variables.add(vrbl);
-
-            vrbl.getBits();
-
-            System.out.println("VARIABLE'S NAME:");
-            App.printVariablesNames(variables);
-            System.out.println("BIT COUNT: " + App.getTotalBits(variables));
-        } while (ans.equals("yes"));
+        System.out.println("VARIABLE'S NAME'S :");
+        App.printVariablesNames(variables);
+        System.out.println("TOTAL BIT COUNT: " + App.getTotalBits(variables));
         System.out.println("BYE");
+        scan.close();
     }
 
     public static void printVariablesNames(ArrayList<Variable> variables) {
