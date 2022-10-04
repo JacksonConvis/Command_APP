@@ -36,12 +36,4 @@ public class Variable {
 
     }
 
-    public int getTotalBits(ArrayList<Variable> variables) {
-        int totalBits = 0;
-        for (int i = 0; i < variables.size(); i++) {
-            totalBits += variables.get(i).getBits();
-        }
-        return totalBits;
-
-    }
 }

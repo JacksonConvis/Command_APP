@@ -17,7 +17,7 @@ public class App {
 
         App.printVariablesNames(variables);
         vrbl.getBits();
-        vrbl.getTotalBits(variables);
+        App.getTotalBits(variables);
     }
 
     public static void printVariablesNames(ArrayList<Variable> variables) {
@@ -25,5 +25,14 @@ public class App {
         for (int i = 0; i < variables.size(); i++) {
             System.out.println(variables.get(i).getName() + "\n");
         }
+    }
+
+    public static int getTotalBits(ArrayList<Variable> variables) {
+        int totalBits = 0;
+        for (int i = 0; i < variables.size(); i++) {
+            totalBits += variables.get(i).getBits();
+        }
+        return totalBits;
+
     }
 }
