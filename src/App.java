@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//if you want to quit on the first round, you will be prompted to enter "}" twice to verify your decision and have at least one variable declared
-
 public class App {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
