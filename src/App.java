@@ -20,9 +20,10 @@ public class App {
             Variable vrbl = new Variable(name, type);
             variables.add(vrbl);
             vrbl.getBits();
+
             App.printVariablesNames(variables);
 
-            App.getTotalBits(variables);
+            System.out.println("Bit count: " + App.getTotalBits(variables));
 
         }
 
