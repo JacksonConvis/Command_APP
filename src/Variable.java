@@ -26,12 +26,35 @@ public class Variable {
         return;
     }
 
+    //
     public int getBits() {
-        final int bits = type.length() * 16;
-        if (type.length() == 0) {
-            return 0;
-        } else {
+        final int bits;
+        if (type.equals("char")) {
+            bits = 16;
             return bits;
+        } else if (type.equals("int")) {
+            bits = 32;
+            return bits;
+        } else if (type.equals("boolean")) {
+            bits = 49;
+            return bits;
+        } else if (type.equals("double")) {
+            bits = 64;
+            return bits;
+        } else if (type.equals("float")) {
+            bits = 32;
+            return bits;
+        } else if (type.equals("long")) {
+            bits = 64;
+            return bits;
+        } else if (type.equals("short")) {
+            bits = 16;
+            return bits;
+        } else if (type.equals("byte")) {
+            bits = 8;
+            return bits;
+        } else {
+            return 0;
         }
 
     }

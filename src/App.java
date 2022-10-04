@@ -4,20 +4,28 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        String ans = "yes";
 
-        System.out.println("DECLARE YOUR VARIABLE'S TYPE:");
-        String type = scan.nextLine();
+        while (ans.equals("yes")) {
+            System.out.println("welcome to the program! enter yes or } to exit");
+            ans = scan.nextLine();
 
-        System.out.println("DECLARE YOUR VARIABLE'S NAME");
-        String name = scan.nextLine();
+            System.out.println("DECLARE YOUR VARIABLE'S TYPE:");
+            String type = scan.nextLine();
 
-        ArrayList<Variable> variables = new ArrayList<Variable>();
-        Variable vrbl = new Variable(name, type);
-        variables.add(vrbl);
+            System.out.println("DECLARE YOUR VARIABLE'S NAME");
+            String name = scan.nextLine();
 
-        App.printVariablesNames(variables);
-        vrbl.getBits();
-        App.getTotalBits(variables);
+            ArrayList<Variable> variables = new ArrayList<Variable>();
+            Variable vrbl = new Variable(name, type);
+            variables.add(vrbl);
+            vrbl.getBits();
+            App.printVariablesNames(variables);
+
+            App.getTotalBits(variables);
+
+        }
+
     }
 
     public static void printVariablesNames(ArrayList<Variable> variables) {
