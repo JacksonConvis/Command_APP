@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Variable {
     private String name;
@@ -26,12 +27,21 @@ public class Variable {
     }
 
     public int getBits() {
-        final int bits = type.length() * 8;
+        final int bits = type.length() * 16;
         if (type.length() == 0) {
             return 0;
         } else {
             return bits;
         }
+
+    }
+
+    public int getTotalBits(ArrayList<Variable> variables) {
+        int totalBits = 0;
+        for (int i = 0; i < variables.size(); i++) {
+            totalBits += variables.get(i).getBits();
+        }
+        return totalBits;
 
     }
 }

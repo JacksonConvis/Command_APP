@@ -11,7 +11,7 @@ public class App {
     public static void printVariablesNames(ArrayList<Variable> variables) {
 
         for (int i = 0; i < variables.size(); i++) {
-            System.out.println(variables.get(i).getName());
+            System.out.println(variables.get(i).getName() + "\n");
         }
     }
 }
