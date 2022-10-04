@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class Variable {
     private String name;
@@ -26,7 +25,7 @@ public class Variable {
         return;
     }
 
-    //
+    // Primitive bit counts using IF-ELSE logic statements
     public int getBits() {
         final int bits;
         if (type.equals("char")) {
